@@ -14,5 +14,5 @@ public interface PUserMapper {
 
     int updateByPrimaryKey(PUser record);
 
-    PUser selByName(String name,String pwd);
+    PUser selByName(String name);
 }

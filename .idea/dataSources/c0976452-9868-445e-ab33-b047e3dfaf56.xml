@@ -1466,179 +1466,149 @@
       <DataType>varchar(8)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="368" parent="340" name="p_Id">
-      <ColNames>p_Id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="369" parent="340" name="u_Id">
-      <ColNames>u_Id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="370" parent="340" name="PRIMARY">
+    <key id="368" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>o_Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="371" parent="340" name="p_order_ibfk_1">
-      <ColNames>p_Id</ColNames>
-      <RefSchemaName>contactdb</RefSchemaName>
-      <RefTableName>p_pet</RefTableName>
-      <RefColNames>p_Id</RefColNames>
-    </foreign-key>
-    <foreign-key id="372" parent="340" name="p_order_ibfk_2">
-      <ColNames>u_Id</ColNames>
-      <RefSchemaName>contactdb</RefSchemaName>
-      <RefTableName>p_user</RefTableName>
-      <RefColNames>u_Id</RefColNames>
-    </foreign-key>
-    <column id="373" parent="341" name="p_Id">
+    <column id="369" parent="341" name="p_Id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="374" parent="341" name="p_Category">
+    <column id="370" parent="341" name="p_Category">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="375" parent="341" name="c_Id">
+    <column id="371" parent="341" name="c_Id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="376" parent="341" name="p_Name">
+    <column id="372" parent="341" name="p_Name">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="377" parent="341" name="p_PhotoUrls">
+    <column id="373" parent="341" name="p_Price">
       <Position>5</Position>
+      <DataType>decimal(10,1 digit)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="374" parent="341" name="p_PhotoUrls">
+      <Position>6</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="378" parent="341" name="p_Tags">
-      <Position>6</Position>
+    <column id="375" parent="341" name="p_Tags">
+      <Position>7</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="379" parent="341" name="p_Status">
-      <Position>7</Position>
+    <column id="376" parent="341" name="p_Status">
+      <Position>8</Position>
       <DataType>varchar(4)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="380" parent="341" name="c_Id">
-      <ColNames>c_Id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="381" parent="341" name="PRIMARY">
+    <key id="377" parent="341" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>p_Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="382" parent="341" name="p_pet_ibfk_1">
-      <ColNames>c_Id</ColNames>
-      <RefSchemaName>contactdb</RefSchemaName>
-      <RefTableName>p_category</RefTableName>
-      <RefColNames>c_Id</RefColNames>
-    </foreign-key>
-    <column id="383" parent="342" name="t_Id">
+    <column id="378" parent="342" name="t_Id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="384" parent="342" name="t_Name">
+    <column id="379" parent="342" name="t_Name">
       <Position>2</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="385" parent="342" name="PRIMARY">
+    <key id="380" parent="342" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>t_Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="386" parent="343" name="u_Id">
+    <column id="381" parent="343" name="u_Id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="387" parent="343" name="u_FirstName">
+    <column id="382" parent="343" name="u_Name">
       <Position>2</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="388" parent="343" name="u_LastName">
+    <column id="383" parent="343" name="u_Email">
       <Position>3</Position>
-      <DataType>varchar(10)|0s</DataType>
+      <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="389" parent="343" name="u_Email">
+    <column id="384" parent="343" name="u_password">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="390" parent="343" name="u_password">
+    <column id="385" parent="343" name="u_Phone">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="391" parent="343" name="u_Phone">
+    <column id="386" parent="343" name="u_UserSatus">
       <Position>6</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="392" parent="343" name="u_UserSatus">
-      <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="393" parent="343" name="PRIMARY">
+    <key id="387" parent="343" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>u_Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="394" parent="344" name="p_id">
+    <column id="388" parent="344" name="p_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="395" parent="344" name="a_id">
+    <column id="389" parent="344" name="a_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="396" parent="344" name="p_title">
+    <column id="390" parent="344" name="p_title">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="397" parent="344" name="p_content">
+    <column id="391" parent="344" name="p_content">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="398" parent="344" name="p_date">
+    <column id="392" parent="344" name="p_date">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="399" parent="344" name="a_id">
+    <index id="393" parent="344" name="a_id">
       <ColNames>a_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="400" parent="344" name="PRIMARY">
+    <key id="394" parent="344" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>p_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="401" parent="344" name="post_ibfk_1">
+    <foreign-key id="395" parent="344" name="post_ibfk_1">
       <ColNames>a_id</ColNames>
       <RefSchemaName>contactdb</RefSchemaName>
       <RefTableName>author</RefTableName>

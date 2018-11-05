@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nf2.Pet_dome.dao.PUserMapper">
+
   <resultMap id="BaseResultMap" type="com.nf2.Pet_dome.entity.PUser">
     <id column="u_Id" jdbcType="INTEGER" property="u_Id" />
-    <result column="u_FirstName" jdbcType="VARCHAR" property="u_FirstName" />
-    <result column="u_LastName" jdbcType="VARCHAR" property="u_LastName" />
+    <result column="u_Name" jdbcType="VARCHAR" property="u_Name" />
     <result column="u_Email" jdbcType="VARCHAR" property="u_Email" />
     <result column="u_password" jdbcType="VARCHAR" property="u_password" />
     <result column="u_Phone" jdbcType="VARCHAR" property="u_Phone" />
@@ -14,18 +14,18 @@
     delete from p_user
     where u_Id = #{u_Id,jdbcType=INTEGER}
   </delete>
+
   <insert id="insert" parameterType="com.nf2.Pet_dome.entity.PUser">
-    insert into p_user (u_Id, u_FirstName, u_LastName, 
-      u_Email, u_password, u_Phone, 
-      u_UserSatus)
-    values (#{u_Id,jdbcType=INTEGER}, #{u_FirstName,jdbcType=VARCHAR}, #{u_LastName,jdbcType=VARCHAR}, 
-      #{u_Email,jdbcType=VARCHAR}, #{u_password,jdbcType=VARCHAR}, #{u_Phone,jdbcType=VARCHAR}, 
-      #{u_UserSatus,jdbcType=INTEGER})
+    insert into p_user (u_Id, u_Name, u_Email, 
+      u_password, u_Phone, u_UserSatus
+      )
+    values (#{u_Id,jdbcType=INTEGER}, #{u_Name,jdbcType=VARCHAR}, #{u_Email,jdbcType=VARCHAR}, 
+      #{u_password,jdbcType=VARCHAR}, #{u_Phone,jdbcType=VARCHAR}, #{u_UserSatus,jdbcType=INTEGER}
+      )
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.nf2.Pet_dome.entity.PUser">
     update p_user
-    set u_FirstName = #{u_FirstName,jdbcType=VARCHAR},
-      u_LastName = #{u_LastName,jdbcType=VARCHAR},
+    set u_Name = #{u_Name,jdbcType=VARCHAR},
       u_Email = #{u_Email,jdbcType=VARCHAR},
       u_password = #{u_password,jdbcType=VARCHAR},
       u_Phone = #{u_Phone,jdbcType=VARCHAR},
@@ -33,16 +33,18 @@
     where u_Id = #{u_Id,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select u_Id, u_FirstName, u_LastName, u_Email, u_password, u_Phone, u_UserSatus
+    select u_Id, u_Name, u_Email, u_password, u_Phone, u_UserSatus
     from p_user
     where u_Id = #{u_Id,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select u_Id, u_FirstName, u_LastName, u_Email, u_password, u_Phone, u_UserSatus
+    select u_Id, u_Name, u_Email, u_password, u_Phone, u_UserSatus
     from p_user
   </select>
-  
-  <select id="selByName" parameterType="string"  resultType="PUser">
-    select *  from p_User where u_LastName = #{name} and u_password = #{pwd};
+
+  <select id="selByName"   resultType="com.nf2.Pet_dome.entity.PUser">
+    select  u_Id, u_Name, u_Email, u_password, u_Phone, u_UserSatus
+      from p_User where u_Name = #{name,jdbcType=INTEGER};
   </select>
+
 </mapper>

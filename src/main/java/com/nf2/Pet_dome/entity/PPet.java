@@ -1,5 +1,7 @@
 package com.nf2.Pet_dome.entity;
 
+import java.math.BigDecimal;
+
 public class PPet {
     private Integer p_Id;
 
@@ -8,6 +10,8 @@ public class PPet {
     private Integer c_Id;
 
     private String p_Name;
+
+    private BigDecimal p_Price;
 
     private String p_PhotoUrls;
 
@@ -47,6 +51,14 @@ public class PPet {
         this.p_Name = p_Name == null ? null : p_Name.trim();
     }
 
+    public BigDecimal getP_Price() {
+        return p_Price;
+    }
+
+    public void setP_Price(BigDecimal p_Price) {
+        this.p_Price = p_Price;
+    }
+
     public String getP_PhotoUrls() {
         return p_PhotoUrls;
     }
@@ -69,18 +81,5 @@ public class PPet {
 
     public void setP_Status(String p_Status) {
         this.p_Status = p_Status == null ? null : p_Status.trim();
-    }
-
-    @Override
-    public String toString() {
-        return "PPet{" +
-                "p_Id=" + p_Id +
-                ", p_Category='" + p_Category + '\'' +
-                ", c_Id=" + c_Id +
-                ", p_Name='" + p_Name + '\'' +
-                ", p_PhotoUrls='" + p_PhotoUrls + '\'' +
-                ", p_Tags='" + p_Tags + '\'' +
-                ", p_Status='" + p_Status + '\'' +
-                '}';
     }
 }

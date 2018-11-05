@@ -13,10 +13,11 @@
 <body>
 <h2 style="text-align: center">宠物商店(天犬)</h2>
 <div style="margin: auto">
-    <form>
-        <input type="text" placeholder="按名字搜索" />
-        <input type="submit" value="搜索"/>
+    <form action="/pet/sou" method="post">
+        <input type="text" name="search" placeholder="按名字搜索" />
+        <input type="submit" value="搜索"   placeholder="搜索"/>
     </form>
+    <div style="color: red">${msg}</div>
     <div>
         <a href="/user" >登录</a>
     </div>
@@ -28,6 +29,7 @@
             <th>种类</th>
             <th>名称</th>
             <th>图片</th>
+            <th>价格</th>
             <th>标签</th>
             <th>状态</th>
             <th>操作</th>
@@ -38,12 +40,19 @@
             <td>${p.p_Category}</td>
             <td>${p.p_Name}</td>
             <td><img width="90" src="/image/${p.p_PhotoUrls}"></td>
+            <td>${p.p_Price}</td>
             <td>${p.p_Tags}</td>
             <td>${p.p_Status}</td>
-            <td><a href="/pet/del/${p.p_Id}" >删除</a> </td>
+            <td>
+                <a href="/pet/del/${p.p_Id}" >删除</a>
+                <a href="#" >购买</a>
+            </td>
         </tr>
         </c:forEach>
     </table>
+    <div>
+        <a href="/pet/add" >添加</a>
+    </div>
 </form>
 </body>
 </html>

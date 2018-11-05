@@ -13,4 +13,6 @@ public interface PPetMapper {
     List<PPet> selectAll();
 
     int updateByPrimaryKey(PPet record);
+
+    List<PPet> selectByName(String name);
 }
