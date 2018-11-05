@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf2.Pet_dome.dao.PCategoryMapper">
+  <resultMap id="BaseResultMap" type="com.nf2.Pet_dome.entity.PCategory">
+    <id column="c_Id" jdbcType="INTEGER" property="c_Id" />
+    <result column="c_Name" jdbcType="VARCHAR" property="c_Name" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from p_category
+    where c_Id = #{c_Id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.nf2.Pet_dome.entity.PCategory">
+    insert into p_category (c_Id, c_Name)
+    values (#{c_Id,jdbcType=INTEGER}, #{c_Name,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.nf2.Pet_dome.entity.PCategory">
+    update p_category
+    set c_Name = #{c_Name,jdbcType=VARCHAR}
+    where c_Id = #{c_Id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select c_Id, c_Name
+    from p_category
+    where c_Id = #{c_Id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select c_Id, c_Name
+    from p_category
+  </select>
+</mapper>
